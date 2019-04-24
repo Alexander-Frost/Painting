@@ -10,7 +10,10 @@ import UIKit
 
 class PaintingViewController: UIViewController {
 
+    let paintingController = PaintingController()
+    
     @IBOutlet var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +43,18 @@ extension PaintingViewController: UITableViewDelegate{
 }
 extension PaintingViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return paintingController.paintings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: <#T##IndexPath#>)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        guard let paintingCell = cell as? PaintingTableViewCell else {return cell}
+        
+        let myPainting = paintingController.paintings[indexPath.row]
+        paintingCell
+        
+        return paintingCell
     }
     
     

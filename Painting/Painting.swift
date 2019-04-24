@@ -13,7 +13,7 @@ struct Painting {
     var isLiked: Bool
     
     init(myImg: UIImage, isLiked: Bool) {
-        self.myImg = self.myImg
-        isLiked = false
+        self.myImg = myImg
+        self.isLiked = false
     }
 }

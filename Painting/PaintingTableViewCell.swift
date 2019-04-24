@@ -10,6 +10,17 @@ import UIKit
 
 class PaintingTableViewCell: UITableViewCell {
 
+    @IBOutlet var portraitView: UIImageView!
+    @IBOutlet var likeBtn: UIButton!
+    
+    @IBAction func likeBtnPressed(_ sender: UIButton) {
+        if likeBtn.title(for: .normal) == "Unliked"{
+            likeBtn.setTitle("Liked", for: .normal)
+        } else {
+            likeBtn.setTitle("Unliked", for: .normal)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
