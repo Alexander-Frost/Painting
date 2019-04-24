@@ -20,4 +20,8 @@ class PaintingController {
             paintings.append(paintingImage)
         }
     }
+    
+    init() {
+        loadImages()
+    }
 }

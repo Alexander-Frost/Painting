@@ -21,6 +21,17 @@ class PaintingTableViewCell: UITableViewCell {
         }
     }
     
+    private func updateViews(){
+        guard let img = img else { return }
+        
+        portraitView.image = img.myImg
+    }
+    
+    var img: Painting?{
+        didSet {
+            updateViews()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
